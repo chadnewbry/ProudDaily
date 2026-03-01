@@ -321,3 +321,58 @@ final class AudioManager {
         recordings = AudioFileManager.loadRecordings()
     }
 }
+
+// MARK: - Playback Speed
+
+extension AudioManager {
+    func setPlaybackSpeed(_ speed: Float) {
+        voicePlayer?.rate = speed
+        voicePlayer?.enableRate = true
+    }
+}
+
+// MARK: - Now Playing Info Center
+
+import MediaPlayer
+
+extension AudioManager {
+    func updateNowPlayingInfo(title: String, duration: TimeInterval) {
+        var info = [String: Any]()
+        info[MPMediaItemPropertyTitle] = title
+        info[MPMediaItemPropertyArtist] = "Proud Daily"
+        info[MPMediaItemPropertyPlaybackDuration] = duration
+        info[MPNowPlayingInfoPropertyPlaybackRate] = voicePlayer?.rate ?? 1.0
+        info[MPNowPlayingInfoPropertyElapsedPlaybackTime] = voicePlayer?.currentTime ?? 0
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = info
+    }
+
+    func setupRemoteCommandCenter() {
+        let center = MPRemoteCommandCenter.shared()
+        center.playCommand.addTarget { [weak self] _ in
+            guard let self, let player = self.voicePlayer else { return .commandFailed }
+            player.play()
+            self.isPlayingVoice = true
+            return .success
+        }
+        center.pauseCommand.addTarget { [weak self] _ in
+            self?.voicePlayer?.pause()
+            self?.isPlayingVoice = false
+            return .success
+        }
+        center.togglePlayPauseCommand.addTarget { [weak self] _ in
+            guard let self else { return .commandFailed }
+            if self.isPlayingVoice {
+                self.voicePlayer?.pause()
+                self.isPlayingVoice = false
+            } else {
+                self.voicePlayer?.play()
+                self.isPlayingVoice = true
+            }
+            return .success
+        }
+    }
+
+    func clearNowPlayingInfo() {
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
+    }
+}
