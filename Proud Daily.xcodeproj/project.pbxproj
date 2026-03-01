@@ -20,6 +20,7 @@
 		B5E73FED001E8163376118EA /* sample-affirmations.json in Resources */ = {isa = PBXBuildFile; fileRef = 93EE9E1BE12ECEB53BF62EE5 /* sample-affirmations.json */; };
 		C076516B999C80BBF0C25325 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA849478CFAB4947F120C4 /* LibraryView.swift */; };
 		CFDA5F1CA79A000476FB51E7 /* AffirmationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */; };
+		B2C3D4E5F6700002DEADBEEF /* MoodSuggestionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001DEADBEEF /* MoodSuggestionEngine.swift */; };
 		D88E3912B79E6AA06FF435B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2944C3D2E660DA6591AB831F /* ContentView.swift */; };
 		E8819AD52155404A17D6E028 /* UserProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20229DDAB225BA356B2EED77 /* UserProgress.swift */; };
 		F7B5F08E88BB99552124186E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543A87BEEF7D369506F9CC4E /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		20229DDAB225BA356B2EED77 /* UserProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgress.swift; sourceTree = "<group>"; };
 		2944C3D2E660DA6591AB831F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60001DEADBEEF /* MoodSuggestionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSuggestionEngine.swift; sourceTree = "<group>"; };
 		508133AA1FD01269F86D6C84 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		543A87BEEF7D369506F9CC4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58B6B2402859B4113DF55798 /* ProudDailyWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ProudDailyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */,
+				A1B2C3D4E5F60001DEADBEEF /* MoodSuggestionEngine.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			files = (
 				36D9FE50891B825155E2CD5B /* Affirmation.swift in Sources */,
 				CFDA5F1CA79A000476FB51E7 /* AffirmationService.swift in Sources */,
+				B2C3D4E5F6700002DEADBEEF /* MoodSuggestionEngine.swift in Sources */,
 				37BBB82AD623FF5E826632F6 /* Color+Pride.swift in Sources */,
 				D88E3912B79E6AA06FF435B7 /* ContentView.swift in Sources */,
 				7C834A6957E3D893A6A8363B /* HomeView.swift in Sources */,
