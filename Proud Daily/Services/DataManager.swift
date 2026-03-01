@@ -235,3 +235,61 @@ final class DataManager {
         try? modelContext.save()
     }
 }
+
+// MARK: - Extended Collection Support
+
+extension DataManager {
+
+    func updateUserAffirmation(_ ua: UserAffirmation, text: String) {
+        ua.text = text
+        try? modelContext.save()
+    }
+
+    func addCuratedToCollection(_ affirmation: Affirmation, collection: UserCollection) {
+        guard !collection.curatedAffirmationIds.contains(affirmation.id) else { return }
+        collection.curatedAffirmationIds.append(affirmation.id)
+        try? modelContext.save()
+    }
+
+    func removeCuratedFromCollection(_ affirmationId: UUID, collection: UserCollection) {
+        collection.curatedAffirmationIds.removeAll { $0 == affirmationId }
+        try? modelContext.save()
+    }
+
+    func fetchCuratedAffirmations(ids: [UUID]) -> [Affirmation] {
+        guard !ids.isEmpty else { return [] }
+        let descriptor = FetchDescriptor<Affirmation>()
+        guard let all = try? modelContext.fetch(descriptor) else { return [] }
+        let idSet = Set(ids)
+        return all.filter { idSet.contains($0.id) }
+    }
+
+    func renameCollection(_ collection: UserCollection, to name: String) {
+        collection.name = name
+        try? modelContext.save()
+    }
+
+    func todayJournalEntry() -> JournalEntry? {
+        let startOfDay = Calendar.current.startOfDay(for: .now)
+        let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay)!
+        let descriptor = FetchDescriptor<JournalEntry>(
+            predicate: #Predicate<JournalEntry> { $0.date >= startOfDay && $0.date < endOfDay }
+        )
+        return try? modelContext.fetch(descriptor).first
+    }
+
+    func updateJournalEntry(_ entry: JournalEntry, text: String) {
+        entry.text = text
+        try? modelContext.save()
+    }
+
+    func updateJournalMoodBefore(_ entry: JournalEntry, mood: Mood?) {
+        entry.moodBefore = mood
+        try? modelContext.save()
+    }
+
+    func updateJournalMoodAfter(_ entry: JournalEntry, mood: Mood?) {
+        entry.moodAfter = mood
+        try? modelContext.save()
+    }
+}
