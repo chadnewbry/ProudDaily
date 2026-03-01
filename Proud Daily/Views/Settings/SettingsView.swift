@@ -15,6 +15,9 @@ struct SettingsView: View {
                     NavigationLink("Theme") {
                         Text("Theme Settings")
                     }
+                    NavigationLink("App Icon") {
+                        AppIconPickerView()
+                    }
                 }
 
                 Section("Notifications") {
