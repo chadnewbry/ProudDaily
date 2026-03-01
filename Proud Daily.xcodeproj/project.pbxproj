@@ -7,30 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02A9842E6C4940628A8E8E81 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0837C782F45FF92683905 /* HomeViewModel.swift */; };
+		23C009DE8C58E910918A48B3 /* ocean_waves.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FEA849755ADBEAC993BBA70F /* ocean_waves.m4a */; };
+		2F4C665F1B571DE8BE0F005E /* SleepTimerDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C992910B4B160E26C17AC1B /* SleepTimerDuration.swift */; };
+		34704D80DCCD4ACABBA89DF0 /* AmbientSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76360DEE46B35F70845EF00 /* AmbientSound.swift */; };
 		36D9FE50891B825155E2CD5B /* Affirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A1EF99496FD12736A8B1B /* Affirmation.swift */; };
 		37BBB82AD623FF5E826632F6 /* Color+Pride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59531BC50CAD896785BA8891 /* Color+Pride.swift */; };
+		4AF15D95A543729E9CABDA77 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB316ABF63D9DB2D9120CAE /* RecordingView.swift */; };
 		50639250ADDC53F2BBE05807 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB3911BFEE934B03E39129E /* SettingsView.swift */; };
-F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A7B8C9D0E1F2 /* AppIconPickerView.swift */; };
 		51651FDA95730C69697E81B8 /* ProgressTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9310A958221235EE537D891 /* ProgressTabView.swift */; };
 		5420BBF33C55ABA52FC1A98B /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508133AA1FD01269F86D6C84 /* JournalView.swift */; };
 		5B75F337B2BAE1E410C5AFE1 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C535796EFBFC31701BD7FA5 /* JournalEntry.swift */; };
+		5C7AC89CA8B6E1D822A07F71 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2777FDE6EDBAE30DFE045F4 /* AudioManager.swift */; };
 		5E083DBCA7EC80BA47C2D1DA /* ProudDailyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E84891E5FD9DBA7DE4A9787 /* ProudDailyWidget.swift */; };
+		63CB3685E539C12CD3154474 /* lofi_beats.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 23F20DBE283989CA588F3EDD /* lofi_beats.m4a */; };
 		7C834A6957E3D893A6A8363B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A419AAF4940B7B4D2A7D622 /* HomeView.swift */; };
-		AF5D99407DE7440FADF7E242 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD190E6866B4B78B93BFC48 /* ConfettiView.swift */; };
-		E8F7FD9364E2485092F2A568 /* ShareCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA1DBBE1FCA4F879262D75A /* ShareCardView.swift */; };
-		02A9842E6C4940628A8E8E81 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0837C782F45FF92683905 /* HomeViewModel.swift */; };
+		87D699B9FEFC736BB7D00940 /* nature_birds.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3B46D1A0AD5056D7509687D4 /* nature_birds.m4a */; };
 		93B3C2DBBE9CE97E9E4EABB9 /* PrideGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBADB4E3C194BFF3CD95C2B /* PrideGradientView.swift */; };
+		9D23C62A5919195F1C6946CB /* soft_piano.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8170DA974C7278D7304A7135 /* soft_piano.m4a */; };
+		AF5D99407DE7440FADF7E242 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD190E6866B4B78B93BFC48 /* ConfettiView.swift */; };
+		B2C3D4E5F6700002DEADBEEF /* MoodSuggestionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001DEADBEEF /* MoodSuggestionEngine.swift */; };
 		B49A56B8C5B9D1B47CAE571E /* ProudDailyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066B258FB2C75C6529F12631 /* ProudDailyApp.swift */; };
 		B5E73FED001E8163376118EA /* affirmations.json in Resources */ = {isa = PBXBuildFile; fileRef = 93EE9E1BE12ECEB53BF62EE5 /* affirmations.json */; };
+		BA92CB7261BA4E2BADA27BCE /* rain.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AC91DB3FA4123AFB815808B /* rain.m4a */; };
 		C076516B999C80BBF0C25325 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA849478CFAB4947F120C4 /* LibraryView.swift */; };
-		CFDA5F1CA79A000476FB51E7 /* AffirmationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */; };
-		B2C3D4E5F6700002DEADBEEF /* MoodSuggestionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001DEADBEEF /* MoodSuggestionEngine.swift */; };
-		D88E3912B79E6AA06FF435B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2944C3D2E660DA6591AB831F /* ContentView.swift */; };
-		F7B5F08E88BB99552124186E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543A87BEEF7D369506F9CC4E /* Assets.xcassets */; };
 		C10UD5YNCBB00000001 /* CloudSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10UD5YNCAA00000001 /* CloudSyncManager.swift */; };
-		DA7AMANAGBB00000001 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7AMANAGAA00000001 /* DataManager.swift */; };
+		CFDA5F1CA79A000476FB51E7 /* AffirmationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */; };
+		D88E3912B79E6AA06FF435B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2944C3D2E660DA6591AB831F /* ContentView.swift */; };
 		DA1LYREC0BB00000001 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1LYREC0AA00000001 /* DailyRecord.swift */; };
+		DA7AMANAGBB00000001 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7AMANAGAA00000001 /* DataManager.swift */; };
+		E5E8189BBC1E7BA5632EA000 /* AudioFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C280C3DEF8A31FADB81C0025 /* AudioFileManager.swift */; };
+		E8F7FD9364E2485092F2A568 /* ShareCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA1DBBE1FCA4F879262D75A /* ShareCardView.swift */; };
+		F0216DA1D73C08CCC9791155 /* AmbientSoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B222FAFDC45BC3B9B2422 /* AmbientSoundsView.swift */; };
+		F0892A5EB9CBCC9E5C07EE64 /* VoiceRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841EADCD6C1430DB84EF1C3 /* VoiceRecording.swift */; };
+		F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A7B8C9D0E1F2 /* AppIconPickerView.swift */; };
+		F7B5F08E88BB99552124186E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543A87BEEF7D369506F9CC4E /* Assets.xcassets */; };
 		FAV0AFFMBB00000001 /* FavoriteAffirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAV0AFFMAA00000001 /* FavoriteAffirmation.swift */; };
+		FD326538D9C97EF0E8B6EAC7 /* SleepModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6CB11A28356B3FE8962B3 /* SleepModeView.swift */; };
 		U5RAFFRMBB00000001 /* UserAffirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = U5RAFFRMAA00000001 /* UserAffirmation.swift */; };
 		U5RC0LLCBB00000001 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = U5RC0LLCAA00000001 /* UserCollection.swift */; };
 		U5RPREFABB00000001 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = U5RPREFAAA00000001 /* UserPreferences.swift */; };
@@ -48,38 +61,72 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 
 /* Begin PBXFileReference section */
 		066B258FB2C75C6529F12631 /* ProudDailyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProudDailyApp.swift; sourceTree = "<group>"; };
+		082AE21F3BD3529DE672E019 /* soft_piano.m4a */ = {isa = PBXFileReference; includeInIndex = 1; path = soft_piano.m4a; sourceTree = "<group>"; };
+		0A232019CE648379A1D86411 /* ocean_waves.m4a */ = {isa = PBXFileReference; includeInIndex = 1; path = ocean_waves.m4a; sourceTree = "<group>"; };
+		0C992910B4B160E26C17AC1B /* SleepTimerDuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SleepTimerDuration.swift; sourceTree = "<group>"; };
 		0E3B8345B49A14D8356E36F9 /* Proud Daily.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "Proud Daily.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EB316ABF63D9DB2D9120CAE /* RecordingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
+		13146573A6841B4606446A25 /* AudioManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		1A4ADD24B3D21A2A6583C1FA /* AmbientSoundsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmbientSoundsView.swift; sourceTree = "<group>"; };
 		1C535796EFBFC31701BD7FA5 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		1E84891E5FD9DBA7DE4A9787 /* ProudDailyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProudDailyWidget.swift; sourceTree = "<group>"; };
+		23F20DBE283989CA588F3EDD /* lofi_beats.m4a */ = {isa = PBXFileReference; includeInIndex = 1; path = lofi_beats.m4a; sourceTree = "<group>"; };
 		2944C3D2E660DA6591AB831F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2AD190E6866B4B78B93BFC48 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationService.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F60001DEADBEEF /* MoodSuggestionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSuggestionEngine.swift; sourceTree = "<group>"; };
+		3A501E418CEFAFF7050F94B6 /* RecordingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
+		3B46D1A0AD5056D7509687D4 /* nature_birds.m4a */ = {isa = PBXFileReference; includeInIndex = 1; path = nature_birds.m4a; sourceTree = "<group>"; };
 		508133AA1FD01269F86D6C84 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		543A87BEEF7D369506F9CC4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58B6B2402859B4113DF55798 /* ProudDailyWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ProudDailyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		59531BC50CAD896785BA8891 /* Color+Pride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Pride.swift"; sourceTree = "<group>"; };
-		825A1EF99496FD12736A8B1B /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
-		93EE9E1BE12ECEB53BF62EE5 /* affirmations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "affirmations.json"; sourceTree = "<group>"; };
-		93FA849478CFAB4947F120C4 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
-		9A419AAF4940B7B4D2A7D622 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		2AD190E6866B4B78B93BFC48 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		5BC6CB11A28356B3FE8962B3 /* SleepModeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SleepModeView.swift; sourceTree = "<group>"; };
 		6AA1DBBE1FCA4F879262D75A /* ShareCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardView.swift; sourceTree = "<group>"; };
-		FBB0837C782F45FF92683905 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		6AC91DB3FA4123AFB815808B /* rain.m4a */ = {isa = PBXFileReference; includeInIndex = 1; path = rain.m4a; sourceTree = "<group>"; };
+		8170DA974C7278D7304A7135 /* soft_piano.m4a */ = {isa = PBXFileReference; includeInIndex = 1; path = soft_piano.m4a; sourceTree = "<group>"; };
+		81CCF0B517E63B0EA7EE6007 /* SleepModeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SleepModeView.swift; sourceTree = "<group>"; };
+		825A1EF99496FD12736A8B1B /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
+		93EE9E1BE12ECEB53BF62EE5 /* affirmations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = affirmations.json; sourceTree = "<group>"; };
+		93FA849478CFAB4947F120C4 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		97EF9A0EB86D547DA9DF26FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A419AAF4940B7B4D2A7D622 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60001DEADBEEF /* MoodSuggestionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSuggestionEngine.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* AppIconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconPickerView.swift; sourceTree = "<group>"; };
+		AB181A9AEE37B0E7DB22FCDC /* AudioFileManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioFileManager.swift; sourceTree = "<group>"; };
 		BC561913C3DDBC9FC27B9233 /* Proud Daily.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Proud Daily.entitlements"; sourceTree = "<group>"; };
 		BEB3911BFEE934B03E39129E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F6A7B8C9D0E1F2 /* AppIconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconPickerView.swift; sourceTree = "<group>"; };
-		F9310A958221235EE537D891 /* ProgressTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTabView.swift; sourceTree = "<group>"; };
-		FCBADB4E3C194BFF3CD95C2B /* PrideGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrideGradientView.swift; sourceTree = "<group>"; };
 		C10UD5YNCAA00000001 /* CloudSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSyncManager.swift; sourceTree = "<group>"; };
-		DA7AMANAGAA00000001 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		C280C3DEF8A31FADB81C0025 /* AudioFileManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioFileManager.swift; sourceTree = "<group>"; };
+		D2777FDE6EDBAE30DFE045F4 /* AudioManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		D667DE0C652667808D6B275A /* lofi_beats.m4a */ = {isa = PBXFileReference; includeInIndex = 1; path = lofi_beats.m4a; sourceTree = "<group>"; };
 		DA1LYREC0AA00000001 /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
+		DA7AMANAGAA00000001 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E45F7612C3E44567DA1A0441 /* nature_birds.m4a */ = {isa = PBXFileReference; includeInIndex = 1; path = nature_birds.m4a; sourceTree = "<group>"; };
+		F76360DEE46B35F70845EF00 /* AmbientSound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmbientSound.swift; sourceTree = "<group>"; };
+		F841EADCD6C1430DB84EF1C3 /* VoiceRecording.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VoiceRecording.swift; sourceTree = "<group>"; };
+		F9310A958221235EE537D891 /* ProgressTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTabView.swift; sourceTree = "<group>"; };
 		FAV0AFFMAA00000001 /* FavoriteAffirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAffirmation.swift; sourceTree = "<group>"; };
+		FB3ADFBCCA78D5D52350E76F /* rain.m4a */ = {isa = PBXFileReference; includeInIndex = 1; path = rain.m4a; sourceTree = "<group>"; };
+		FBB0837C782F45FF92683905 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FCBADB4E3C194BFF3CD95C2B /* PrideGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrideGradientView.swift; sourceTree = "<group>"; };
+		FEA849755ADBEAC993BBA70F /* ocean_waves.m4a */ = {isa = PBXFileReference; includeInIndex = 1; path = ocean_waves.m4a; sourceTree = "<group>"; };
+		FF1B222FAFDC45BC3B9B2422 /* AmbientSoundsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmbientSoundsView.swift; sourceTree = "<group>"; };
 		U5RAFFRMAA00000001 /* UserAffirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAffirmation.swift; sourceTree = "<group>"; };
 		U5RC0LLCAA00000001 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
 		U5RPREFAAA00000001 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		22D701431FCF127DAC74B9C1 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				0EB316ABF63D9DB2D9120CAE /* RecordingView.swift */,
+				FF1B222FAFDC45BC3B9B2422 /* AmbientSoundsView.swift */,
+				5BC6CB11A28356B3FE8962B3 /* SleepModeView.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		2B3DFE3822C697314600EBD7 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +139,7 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 			isa = PBXGroup;
 			children = (
 				93EE9E1BE12ECEB53BF62EE5 /* affirmations.json */,
+				D0F7E7954F6C5AFBA9FBF0FE /* AmbientSounds */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -116,6 +164,15 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 			path = Home;
 			sourceTree = "<group>";
 		};
+		665525D3B84F9F05B88A0567 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				D2777FDE6EDBAE30DFE045F4 /* AudioManager.swift */,
+				C280C3DEF8A31FADB81C0025 /* AudioFileManager.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		6BCC530D360A35F3A53ED9E8 /* Proud Daily */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +185,7 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 				3A89B43D2E3D85E3D14F90AB /* Resources */,
 				AB066DCE6D48A8658952A364 /* Services */,
 				CB006C205B3A6A293C36B3E3 /* Views */,
+				97EF9A0EB86D547DA9DF26FE /* Info.plist */,
 			);
 			path = "Proud Daily";
 			sourceTree = "<group>";
@@ -172,6 +230,7 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 				C10UD5YNCAA00000001 /* CloudSyncManager.swift */,
 				DA7AMANAGAA00000001 /* DataManager.swift */,
 				A1B2C3D4E5F60001DEADBEEF /* MoodSuggestionEngine.swift */,
+				665525D3B84F9F05B88A0567 /* Audio */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -201,8 +260,21 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 				BD65A439E11840CD1093D5E9 /* Progress */,
 				46EDA327FC2FD4BDCB27698E /* Settings */,
 				A113D644BC9F4A39F08A1505 /* Shared */,
+				22D701431FCF127DAC74B9C1 /* Audio */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D0F7E7954F6C5AFBA9FBF0FE /* AmbientSounds */ = {
+			isa = PBXGroup;
+			children = (
+				6AC91DB3FA4123AFB815808B /* rain.m4a */,
+				FEA849755ADBEAC993BBA70F /* ocean_waves.m4a */,
+				23F20DBE283989CA588F3EDD /* lofi_beats.m4a */,
+				8170DA974C7278D7304A7135 /* soft_piano.m4a */,
+				3B46D1A0AD5056D7509687D4 /* nature_birds.m4a */,
+			);
+			path = AmbientSounds;
 			sourceTree = "<group>";
 		};
 		DB243522E86FA714575FED1D /* Products */ = {
@@ -232,6 +304,9 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 				U5RAFFRMAA00000001 /* UserAffirmation.swift */,
 				U5RC0LLCAA00000001 /* UserCollection.swift */,
 				U5RPREFAAA00000001 /* UserPreferences.swift */,
+				F76360DEE46B35F70845EF00 /* AmbientSound.swift */,
+				F841EADCD6C1430DB84EF1C3 /* VoiceRecording.swift */,
+				0C992910B4B160E26C17AC1B /* SleepTimerDuration.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,8 +326,6 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 				C4428238584970A047AB7E13 /* PBXTargetDependency */,
 			);
 			name = ProudDailyWidgetExtension;
-			packageProductDependencies = (
-			);
 			productName = ProudDailyWidgetExtension;
 			productReference = 58B6B2402859B4113DF55798 /* ProudDailyWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -269,8 +342,6 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 			dependencies = (
 			);
 			name = "Proud Daily";
-			packageProductDependencies = (
-			);
 			productName = "Proud Daily";
 			productReference = 0E3B8345B49A14D8356E36F9 /* Proud Daily.app */;
 			productType = "com.apple.product-type.application";
@@ -295,6 +366,7 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 			mainGroup = 8AA05FF6BAA352727730707E;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
+			productRefGroup = DB243522E86FA714575FED1D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -311,6 +383,11 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 			files = (
 				F7B5F08E88BB99552124186E /* Assets.xcassets in Resources */,
 				B5E73FED001E8163376118EA /* affirmations.json in Resources */,
+				BA92CB7261BA4E2BADA27BCE /* rain.m4a in Resources */,
+				23C009DE8C58E910918A48B3 /* ocean_waves.m4a in Resources */,
+				63CB3685E539C12CD3154474 /* lofi_beats.m4a in Resources */,
+				9D23C62A5919195F1C6946CB /* soft_piano.m4a in Resources */,
+				87D699B9FEFC736BB7D00940 /* nature_birds.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +422,14 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 				U5RAFFRMBB00000001 /* UserAffirmation.swift in Sources */,
 				U5RC0LLCBB00000001 /* UserCollection.swift in Sources */,
 				U5RPREFABB00000001 /* UserPreferences.swift in Sources */,
+				34704D80DCCD4ACABBA89DF0 /* AmbientSound.swift in Sources */,
+				F0892A5EB9CBCC9E5C07EE64 /* VoiceRecording.swift in Sources */,
+				2F4C665F1B571DE8BE0F005E /* SleepTimerDuration.swift in Sources */,
+				5C7AC89CA8B6E1D822A07F71 /* AudioManager.swift in Sources */,
+				E5E8189BBC1E7BA5632EA000 /* AudioFileManager.swift in Sources */,
+				4AF15D95A543729E9CABDA77 /* RecordingView.swift in Sources */,
+				F0216DA1D73C08CCC9791155 /* AmbientSoundsView.swift in Sources */,
+				FD326538D9C97EF0E8B6EAC7 /* SleepModeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,15 +455,15 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 		2E32622217C6C5D5B0E888F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "TransPride BiPride Subtle PastelRainbow BoldPride";
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Proud Daily/Info.plist";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Proud Daily/Proud Daily.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Proud Daily/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Proud Daily";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Proud Daily uses HealthKit to track your mindfulness minutes.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Proud Daily uses the microphone for voice journaling.";
@@ -440,15 +525,15 @@ F2E1D0C9B8A7F6E5D4C3B2A1 /* AppIconPickerView.swift in Sources */ = {isa = PBXBu
 		9B6FF08EFEB424B082376368 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "TransPride BiPride Subtle PastelRainbow BoldPride";
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Proud Daily/Info.plist";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Proud Daily/Proud Daily.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Proud Daily/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Proud Daily";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Proud Daily uses HealthKit to track your mindfulness minutes.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Proud Daily uses the microphone for voice journaling.";

@@ -6,38 +6,11 @@
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
-			<key>TransPride</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>TransPride</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
 			<key>BiPride</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>BiPride</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>Subtle</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>Subtle</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>PastelRainbow</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>PastelRainbow</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
@@ -51,7 +24,40 @@
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
+			<key>PastelRainbow</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>PastelRainbow</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Subtle</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Subtle</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>TransPride</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>TransPride</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
 		</dict>
 	</dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Proud Daily needs microphone access to record you reading your affirmations.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 </dict>
 </plist>
