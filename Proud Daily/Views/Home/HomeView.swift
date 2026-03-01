@@ -7,6 +7,12 @@ struct HomeView: View {
     @State private var holdTimer: Timer?
     @State private var showShareSheet = false
     @State private var shareImage: UIImage?
+    @State private var showRecordingSheet = false
+    @State private var showAmbientSheet = false
+    @State private var showSleepSheet = false
+    @State private var showPlaybackSheet = false
+    @State private var selectedRecordingForPlayback: VoiceRecording?
+    @State private var audioManager = AudioManager.shared
 
     var body: some View {
         let theme = vm.selectedTheme
@@ -76,6 +82,48 @@ struct HomeView: View {
             }
         }
         .animation(.easeInOut(duration: 0.3), value: vm.isRevealed)
+        .sheet(isPresented: $showRecordingSheet) {
+            if let aff = vm.currentAffirmation {
+                RecordingView(affirmation: aff)
+            }
+        }
+        .sheet(isPresented: $showAmbientSheet) {
+            NavigationStack {
+                AmbientSoundsView()
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Done") { showAmbientSheet = false }
+                        }
+                    }
+            }
+        }
+        .sheet(isPresented: $showSleepSheet) {
+            NavigationStack {
+                SleepModeView()
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Done") { showSleepSheet = false }
+                        }
+                    }
+            }
+        }
+        .sheet(isPresented: $showPlaybackSheet) {
+            if let recording = selectedRecordingForPlayback {
+                AudioPlaybackView(
+                    recording: recording,
+                    affirmationText: vm.currentAffirmation?.text ?? ""
+                )
+            }
+        }
+        .overlay(alignment: .top) {
+            if audioManager.isSleepModeActive {
+                SleepModeBanner {
+                    audioManager.stopSleepMode()
+                }
+                .transition(.move(edge: .top).combined(with: .opacity))
+                .padding(.top, 60)
+            }
+        }
     }
 
     // MARK: - Streak Header
@@ -97,6 +145,26 @@ struct HomeView: View {
             }
 
             Spacer()
+
+            // Ambient sounds
+            Button { showAmbientSheet = true } label: {
+                Image(systemName: "waveform")
+                    .font(.body.weight(.medium))
+                    .foregroundStyle(.white)
+                    .padding(10)
+                    .background(.ultraThinMaterial, in: Circle())
+            }
+            .accessibilityLabel("Ambient sounds")
+
+            // Sleep mode
+            Button { showSleepSheet = true } label: {
+                Image(systemName: "moon.zzz")
+                    .font(.body.weight(.medium))
+                    .foregroundStyle(.white)
+                    .padding(10)
+                    .background(.ultraThinMaterial, in: Circle())
+            }
+            .accessibilityLabel("Sleep mode")
         }
     }
 
@@ -237,15 +305,20 @@ struct HomeView: View {
             }
             .accessibilityLabel("Share affirmation")
 
-            // Audio
+            // Record / Play audio
             Button {
-                // TODO: Play recorded audio or prompt to record
+                let recordings = audioManager.recordings(for: affirmation.id); if let recording = recordings.first {
+                    selectedRecordingForPlayback = recording
+                    showPlaybackSheet = true
+                } else {
+                    showRecordingSheet = true
+                }
             } label: {
-                Image(systemName: "speaker.wave.2")
+                Image(systemName: audioManager.recordings(for: affirmation.id).isEmpty ? "mic" : "speaker.wave.2.fill")
                     .font(.title2)
                     .foregroundStyle(.white)
             }
-            .accessibilityLabel("Play audio")
+            .accessibilityLabel(audioManager.recordings(for: affirmation.id).isEmpty ? "Record affirmation" : "Play recording")
         }
         .padding(.vertical, 16)
         .padding(.horizontal, 32)
