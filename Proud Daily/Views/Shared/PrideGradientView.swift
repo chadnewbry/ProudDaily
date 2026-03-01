@@ -1,14 +1,24 @@
 import SwiftUI
 
 struct PrideGradientView: View {
+    @Environment(ThemeManager.self) private var themeManager
+
     var body: some View {
-        LinearGradient(
-            colors: [.prideRed, .prideOrange, .prideYellow, .prideGreen, .prideBlue, .prideViolet],
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
+        ZStack {
+            if let bgImage = themeManager.customBackgroundImage {
+                Image(uiImage: bgImage)
+                    .resizable()
+                    .scaledToFill()
+                    .overlay(themeManager.activeGradient.opacity(0.5))
+            } else {
+                themeManager.activeGradient
+            }
+        }
         .ignoresSafeArea()
     }
 }
 
-#Preview { PrideGradientView() }
+#Preview {
+    PrideGradientView()
+        .environment(ThemeManager())
+}

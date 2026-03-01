@@ -1,49 +1,49 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject private var healthKit = HealthKitManager.shared
-    @AppStorage("healthKitEnabled") private var healthKitEnabled = true
+    @Environment(ThemeManager.self) private var themeManager
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 24) {
-                Spacer()
+            ZStack {
+                PrideGradientView()
 
-                Text("Today's Affirmation")
-                    .font(.headline)
-                    .foregroundStyle(.secondary)
+                VStack(spacing: 24) {
+                    Spacer()
 
-                Text("You are worthy of love and belonging, exactly as you are.")
-                    .font(.title2)
-                    .fontWeight(.medium)
-                    .multilineTextAlignment(.center)
+                    Text("Today's Affirmation")
+                        .font(themeManager.scaledFont(size: 16, weight: .medium))
+                        .foregroundStyle(.white.opacity(0.8))
+
+                    Text("You are worthy of love and belonging, exactly as you are.")
+                        .font(themeManager.scaledFont(size: 24, weight: .semibold))
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 32)
+
+                    Spacer()
+
+                    Button {
+                        // TODO: Share action
+                    } label: {
+                        Label("Share", systemImage: "square.and.arrow.up")
+                            .font(themeManager.scaledFont(size: 17, weight: .semibold))
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.white.opacity(0.25))
+                    .foregroundStyle(.white)
                     .padding(.horizontal, 32)
-
-                Spacer()
-
-                Button {
-                    // TODO: Share action
-                } label: {
-                    Label("Share", systemImage: "square.and.arrow.up")
-                        .frame(maxWidth: .infinity)
+                    .padding(.bottom, 32)
                 }
-                .buttonStyle(.borderedProminent)
-                .padding(.horizontal, 32)
-                .padding(.bottom, 32)
             }
             .navigationTitle("Proud Daily")
-            .onAppear {
-                if healthKitEnabled {
-                    healthKit.startSession()
-                }
-            }
-            .onDisappear {
-                if healthKitEnabled {
-                    healthKit.endSession()
-                }
-            }
+            .toolbarColorScheme(.dark, for: .navigationBar)
         }
     }
 }
 
-#Preview { HomeView() }
+#Preview {
+    HomeView()
+        .environment(ThemeManager())
+}
