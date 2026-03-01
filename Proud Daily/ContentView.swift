@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(ThemeManager.self) private var themeManager
     @State private var selectedTab: Tab = .home
 
     var body: some View {
@@ -35,7 +36,7 @@ struct ContentView: View {
                 }
                 .tag(Tab.settings)
         }
-        .tint(.accentColor)
+        .tint(themeManager.activeAccentColor)
     }
 }
 
@@ -45,4 +46,5 @@ enum Tab: String, CaseIterable {
 
 #Preview {
     ContentView()
+        .environment(ThemeManager())
 }
