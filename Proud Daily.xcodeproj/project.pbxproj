@@ -15,6 +15,9 @@
 		5B75F337B2BAE1E410C5AFE1 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C535796EFBFC31701BD7FA5 /* JournalEntry.swift */; };
 		5E083DBCA7EC80BA47C2D1DA /* ProudDailyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E84891E5FD9DBA7DE4A9787 /* ProudDailyWidget.swift */; };
 		7C834A6957E3D893A6A8363B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A419AAF4940B7B4D2A7D622 /* HomeView.swift */; };
+		AF5D99407DE7440FADF7E242 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD190E6866B4B78B93BFC48 /* ConfettiView.swift */; };
+		E8F7FD9364E2485092F2A568 /* ShareCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA1DBBE1FCA4F879262D75A /* ShareCardView.swift */; };
+		02A9842E6C4940628A8E8E81 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0837C782F45FF92683905 /* HomeViewModel.swift */; };
 		93B3C2DBBE9CE97E9E4EABB9 /* PrideGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBADB4E3C194BFF3CD95C2B /* PrideGradientView.swift */; };
 		B49A56B8C5B9D1B47CAE571E /* ProudDailyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066B258FB2C75C6529F12631 /* ProudDailyApp.swift */; };
 		B5E73FED001E8163376118EA /* sample-affirmations.json in Resources */ = {isa = PBXBuildFile; fileRef = 93EE9E1BE12ECEB53BF62EE5 /* sample-affirmations.json */; };
@@ -53,6 +56,9 @@
 		93EE9E1BE12ECEB53BF62EE5 /* sample-affirmations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sample-affirmations.json"; sourceTree = "<group>"; };
 		93FA849478CFAB4947F120C4 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		9A419AAF4940B7B4D2A7D622 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2AD190E6866B4B78B93BFC48 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		6AA1DBBE1FCA4F879262D75A /* ShareCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardView.swift; sourceTree = "<group>"; };
+		FBB0837C782F45FF92683905 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BC561913C3DDBC9FC27B9233 /* Proud Daily.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Proud Daily.entitlements"; sourceTree = "<group>"; };
 		BEB3911BFEE934B03E39129E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F9310A958221235EE537D891 /* ProgressTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTabView.swift; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				9A419AAF4940B7B4D2A7D622 /* HomeView.swift */,
+				2AD190E6866B4B78B93BFC48 /* ConfettiView.swift */,
+				6AA1DBBE1FCA4F879262D75A /* ShareCardView.swift */,
+				FBB0837C782F45FF92683905 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -297,6 +306,9 @@
 				37BBB82AD623FF5E826632F6 /* Color+Pride.swift in Sources */,
 				D88E3912B79E6AA06FF435B7 /* ContentView.swift in Sources */,
 				7C834A6957E3D893A6A8363B /* HomeView.swift in Sources */,
+				AF5D99407DE7440FADF7E242 /* ConfettiView.swift in Sources */,
+				E8F7FD9364E2485092F2A568 /* ShareCardView.swift in Sources */,
+				02A9842E6C4940628A8E8E81 /* HomeViewModel.swift in Sources */,
 				5B75F337B2BAE1E410C5AFE1 /* JournalEntry.swift in Sources */,
 				5420BBF33C55ABA52FC1A98B /* JournalView.swift in Sources */,
 				C076516B999C80BBF0C25325 /* LibraryView.swift in Sources */,
