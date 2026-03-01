@@ -40,6 +40,8 @@
 		C076516B999C80BBF0C25325 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA849478CFAB4947F120C4 /* LibraryView.swift */; };
 		C10UD5YNCBB00000001 /* CloudSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10UD5YNCAA00000001 /* CloudSyncManager.swift */; };
 		CFDA5F1CA79A000476FB51E7 /* AffirmationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */; };
+		8898816A5F1EB2827E421CC1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B789031EB5524F770901E4 /* NotificationManager.swift */; };
+		197FC735F77A52D1DB06CD43 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D750A4C1E6258D3FA0329F7 /* NotificationSettingsView.swift */; };
 		D88E3912B79E6AA06FF435B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2944C3D2E660DA6591AB831F /* ContentView.swift */; };
 		DA1LYREC0BB00000001 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1LYREC0AA00000001 /* DailyRecord.swift */; };
 		DA7AMANAGBB00000001 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7AMANAGAA00000001 /* DataManager.swift */; };
@@ -78,6 +80,8 @@
 		2944C3D2E660DA6591AB831F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2AD190E6866B4B78B93BFC48 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationService.swift; sourceTree = "<group>"; };
+		A9B789031EB5524F770901E4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		3D750A4C1E6258D3FA0329F7 /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
 		3B46D1A0AD5056D7509687D4 /* nature_birds.m4a */ = {isa = PBXFileReference; includeInIndex = 1; path = nature_birds.m4a; sourceTree = "<group>"; };
 		4BA0B5479B86CAB6BEB563DC /* WaveformView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		508133AA1FD01269F86D6C84 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				BEB3911BFEE934B03E39129E /* SettingsView.swift */,
+				3D750A4C1E6258D3FA0329F7 /* NotificationSettingsView.swift */,
 				A1B2C3D4E5F6A7B8C9D0E1F2 /* AppIconPickerView.swift */,
 			);
 			path = Settings;
@@ -251,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */,
+				A9B789031EB5524F770901E4 /* NotificationManager.swift */,
 				DEADBEEF1234567890ABCDEF /* HealthKitManager.swift */,
 				C10UD5YNCAA00000001 /* CloudSyncManager.swift */,
 				DA7AMANAGAA00000001 /* DataManager.swift */,
@@ -426,6 +432,8 @@
 			files = (
 				36D9FE50891B825155E2CD5B /* Affirmation.swift in Sources */,
 				CFDA5F1CA79A000476FB51E7 /* AffirmationService.swift in Sources */,
+				8898816A5F1EB2827E421CC1 /* NotificationManager.swift in Sources */,
+				197FC735F77A52D1DB06CD43 /* NotificationSettingsView.swift in Sources */,
 				F2E1D0C9B8A7F6E5D4C3B2A1 /* HealthKitManager.swift in Sources */,
 				B2C3D4E5F6700002DEADBEEF /* MoodSuggestionEngine.swift in Sources */,
 				37BBB82AD623FF5E826632F6 /* Color+Pride.swift in Sources */,
