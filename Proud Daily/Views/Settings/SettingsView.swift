@@ -1,8 +1,18 @@
 import SwiftUI
+import SwiftData
 
 struct SettingsView: View {
     @StateObject private var healthKit = HealthKitManager.shared
     @AppStorage("healthKitEnabled") private var healthKitEnabled = true
+    @Query private var allPreferences: [UserPreferences]
+    @Environment(\.modelContext) private var modelContext
+
+    private var preferences: UserPreferences {
+        if let existing = allPreferences.first { return existing }
+        let new = UserPreferences()
+        modelContext.insert(new)
+        return new
+    }
 
     var body: some View {
         NavigationStack {
@@ -13,8 +23,8 @@ struct SettingsView: View {
                     }
                 }
                 Section("Notifications") {
-                    NavigationLink("Reminder Time") {
-                        Text("Notification Settings")
+                    NavigationLink("Notification Settings") {
+                        NotificationSettingsView(preferences: preferences)
                     }
                 }
 
