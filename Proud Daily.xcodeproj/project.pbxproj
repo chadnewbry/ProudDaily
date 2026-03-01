@@ -49,6 +49,8 @@
 		U5RAFFRMBB00000001 /* UserAffirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = U5RAFFRMAA00000001 /* UserAffirmation.swift */; };
 		U5RC0LLCBB00000001 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = U5RC0LLCAA00000001 /* UserCollection.swift */; };
 		U5RPREFABB00000001 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = U5RPREFAAA00000001 /* UserPreferences.swift */; };
+		F2E1D0C9B8A7F6E5D4C3B2A1 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A7B8C9D0E1F2 /* HealthKitManager.swift */; };
+		2F1E0D9C8B7A6F5E4D3C2B1A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7A8B9C0D1E2F /* HealthKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,7 +111,20 @@
 		U5RAFFRMAA00000001 /* UserAffirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAffirmation.swift; sourceTree = "<group>"; };
 		U5RC0LLCAA00000001 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
 		U5RPREFAAA00000001 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7A8B9C0D1E2F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A4B5C6D7E8F9A0B1C2D3E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F1E0D9C8B7A6F5E4D3C2B1A /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		22D701431FCF127DAC74B9C1 /* Audio */ = {
@@ -225,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* HealthKitManager.swift */,
 				C10UD5YNCAA00000001 /* CloudSyncManager.swift */,
 				DA7AMANAGAA00000001 /* DataManager.swift */,
 				A1B2C3D4E5F60001DEADBEEF /* MoodSuggestionEngine.swift */,
@@ -332,6 +348,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBC5E6841DBB54CC3BE05F49 /* Build configuration list for PBXNativeTarget "Proud Daily" */;
 			buildPhases = (
+				3A4B5C6D7E8F9A0B1C2D3E4F /* Frameworks */,
 				A4E2E5C4215C0498AE6DE1FA /* Sources */,
 				492D2D09AB4FCCF5B342D49C /* Resources */,
 			);
@@ -398,6 +415,7 @@
 			files = (
 				36D9FE50891B825155E2CD5B /* Affirmation.swift in Sources */,
 				CFDA5F1CA79A000476FB51E7 /* AffirmationService.swift in Sources */,
+				F2E1D0C9B8A7F6E5D4C3B2A1 /* HealthKitManager.swift in Sources */,
 				B2C3D4E5F6700002DEADBEEF /* MoodSuggestionEngine.swift in Sources */,
 				37BBB82AD623FF5E826632F6 /* Color+Pride.swift in Sources */,
 				D88E3912B79E6AA06FF435B7 /* ContentView.swift in Sources */,
@@ -466,6 +484,7 @@
 				INFOPLIST_FILE = "Proud Daily/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Proud Daily";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Proud Daily uses HealthKit to track your mindfulness minutes.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Proud Daily writes mindful minutes to Apple Health when you practice affirmations.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Proud Daily uses the microphone for voice journaling.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Proud Daily accesses your photo library to personalize your journal.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -536,6 +555,7 @@
 				INFOPLIST_FILE = "Proud Daily/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Proud Daily";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Proud Daily uses HealthKit to track your mindfulness minutes.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Proud Daily writes mindful minutes to Apple Health when you practice affirmations.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Proud Daily uses the microphone for voice journaling.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Proud Daily accesses your photo library to personalize your journal.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

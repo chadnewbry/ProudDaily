@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    private let baseURL = "https://chadnewbry.github.io/ProudDaily/"
+    @StateObject private var healthKit = HealthKitManager.shared
+    @AppStorage("healthKitEnabled") private var healthKitEnabled = true
 
     var body: some View {
         NavigationStack {
@@ -16,32 +17,22 @@ struct SettingsView: View {
                         Text("Notification Settings")
                     }
                 }
-                Section("Legal") {
-                    Link(destination: URL(string: "\(baseURL)privacy-policy.html")!) {
-                        HStack {
-                            Text("Privacy Policy")
-                            Spacer()
-                            Image(systemName: "arrow.up.right.square")
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                    Link(destination: URL(string: "\(baseURL)terms-of-service.html")!) {
-                        HStack {
-                            Text("Terms of Service")
-                            Spacer()
-                            Image(systemName: "arrow.up.right.square")
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                    Link(destination: URL(string: "\(baseURL)support.html")!) {
-                        HStack {
-                            Text("Support")
-                            Spacer()
-                            Image(systemName: "arrow.up.right.square")
-                                .foregroundStyle(.secondary)
-                        }
+
+                if healthKit.isAvailable {
+                    Section {
+                        Toggle("Track Mindful Minutes", isOn: $healthKitEnabled)
+                            .onChange(of: healthKitEnabled) { _, newValue in
+                                if newValue {
+                                    Task { await healthKit.requestAuthorization() }
+                                }
+                            }
+                    } header: {
+                        Text("Apple Health")
+                    } footer: {
+                        Text("Log affirmation sessions as Mindful Minutes in Apple Health.")
                     }
                 }
+
                 Section("About") {
                     HStack {
                         Text("Version")
