@@ -4,16 +4,19 @@ struct LibraryView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(AffirmationCategory.allCases, id: \.self) { category in
+                ForEach(AffirmationCategory.allCases) { category in
                     NavigationLink(value: category) {
-                        Label(category.rawValue, systemImage: category.icon)
+                        HStack(spacing: 10) {
+                            Text(category.emoji)
+                            Text(category.displayName)
+                        }
                     }
                 }
             }
             .navigationTitle("Library")
             .navigationDestination(for: AffirmationCategory.self) { category in
-                Text(category.rawValue)
-                    .navigationTitle(category.rawValue)
+                Text(category.displayName)
+                    .navigationTitle(category.displayName)
             }
         }
     }

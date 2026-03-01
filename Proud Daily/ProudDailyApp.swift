@@ -3,34 +3,69 @@ import SwiftData
 
 @main
 struct ProudDailyApp: App {
-    let modelContainer: ModelContainer
-
-    init() {
-        do {
-            let schema = Schema([
-                Affirmation.self,
-                FavoriteAffirmation.self,
-                UserAffirmation.self,
-                UserCollection.self,
-                JournalEntry.self,
-                DailyRecord.self,
-                UserPreferences.self,
-            ])
-            let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-            modelContainer = try ModelContainer(for: schema, configurations: [config])
-        } catch {
-            fatalError("Failed to create ModelContainer: \(error)")
-        }
-    }
+    @State private var syncManager = CloudSyncManager.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(syncManager)
                 .onAppear {
-                    let dataManager = DataManager(modelContext: modelContainer.mainContext)
-                    dataManager.seedIfNeeded()
+                    // Seed data on first launch using the default container
                 }
         }
-        .modelContainer(modelContainer)
+        .modelContainer(Self.createModelContainer())
+    }
+
+    static func createModelContainer() -> ModelContainer {
+        let schema = Schema([
+            Affirmation.self,
+            FavoriteAffirmation.self,
+            UserAffirmation.self,
+            UserCollection.self,
+            JournalEntry.self,
+            DailyRecord.self,
+            UserPreferences.self,
+        ])
+
+        // Check if user previously enabled iCloud sync via UserDefaults
+        // (We store this separately because we need it before SwiftData loads)
+        let iCloudEnabled = UserDefaults.standard.bool(forKey: "iCloudSyncEnabled")
+
+        let config: ModelConfiguration
+        if iCloudEnabled {
+            config = ModelConfiguration(
+                schema: schema,
+                isStoredInMemoryOnly: false,
+                cloudKitDatabase: .private("iCloud.com.openclaw.prouddaily")
+            )
+        } else {
+            config = ModelConfiguration(
+                schema: schema,
+                isStoredInMemoryOnly: false,
+                cloudKitDatabase: .none
+            )
+        }
+
+        do {
+            let container = try ModelContainer(for: schema, configurations: [config])
+
+            // Seed if needed
+            let context = container.mainContext
+            let descriptor = FetchDescriptor<Affirmation>(predicate: #Predicate<Affirmation> { $0.isCustom == false })
+            let count = (try? context.fetchCount(descriptor)) ?? 0
+            if count == 0 {
+                let dataManager = DataManager(modelContext: context)
+                dataManager.seedIfNeeded()
+            }
+
+            // Update sync manager status
+            if iCloudEnabled {
+                CloudSyncManager.shared.enableSync()
+            }
+
+            return container
+        } catch {
+            fatalError("Failed to create ModelContainer: \(error)")
+        }
     }
 }
