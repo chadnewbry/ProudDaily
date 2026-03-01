@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>TransPride</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>TransPride</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>BiPride</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>BiPride</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Subtle</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Subtle</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>PastelRainbow</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>PastelRainbow</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>BoldPride</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>BoldPride</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
