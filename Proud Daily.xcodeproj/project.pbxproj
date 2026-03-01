@@ -20,13 +20,19 @@
 		02A9842E6C4940628A8E8E81 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0837C782F45FF92683905 /* HomeViewModel.swift */; };
 		93B3C2DBBE9CE97E9E4EABB9 /* PrideGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBADB4E3C194BFF3CD95C2B /* PrideGradientView.swift */; };
 		B49A56B8C5B9D1B47CAE571E /* ProudDailyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066B258FB2C75C6529F12631 /* ProudDailyApp.swift */; };
-		B5E73FED001E8163376118EA /* sample-affirmations.json in Resources */ = {isa = PBXBuildFile; fileRef = 93EE9E1BE12ECEB53BF62EE5 /* sample-affirmations.json */; };
+		B5E73FED001E8163376118EA /* affirmations.json in Resources */ = {isa = PBXBuildFile; fileRef = 93EE9E1BE12ECEB53BF62EE5 /* affirmations.json */; };
 		C076516B999C80BBF0C25325 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA849478CFAB4947F120C4 /* LibraryView.swift */; };
 		CFDA5F1CA79A000476FB51E7 /* AffirmationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */; };
 		B2C3D4E5F6700002DEADBEEF /* MoodSuggestionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001DEADBEEF /* MoodSuggestionEngine.swift */; };
 		D88E3912B79E6AA06FF435B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2944C3D2E660DA6591AB831F /* ContentView.swift */; };
-		E8819AD52155404A17D6E028 /* UserProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20229DDAB225BA356B2EED77 /* UserProgress.swift */; };
 		F7B5F08E88BB99552124186E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543A87BEEF7D369506F9CC4E /* Assets.xcassets */; };
+		C10UD5YNCBB00000001 /* CloudSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10UD5YNCAA00000001 /* CloudSyncManager.swift */; };
+		DA7AMANAGBB00000001 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7AMANAGAA00000001 /* DataManager.swift */; };
+		DA1LYREC0BB00000001 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1LYREC0AA00000001 /* DailyRecord.swift */; };
+		FAV0AFFMBB00000001 /* FavoriteAffirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAV0AFFMAA00000001 /* FavoriteAffirmation.swift */; };
+		U5RAFFRMBB00000001 /* UserAffirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = U5RAFFRMAA00000001 /* UserAffirmation.swift */; };
+		U5RC0LLCBB00000001 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = U5RC0LLCAA00000001 /* UserCollection.swift */; };
+		U5RPREFABB00000001 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = U5RPREFAAA00000001 /* UserPreferences.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +50,6 @@
 		0E3B8345B49A14D8356E36F9 /* Proud Daily.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "Proud Daily.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C535796EFBFC31701BD7FA5 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		1E84891E5FD9DBA7DE4A9787 /* ProudDailyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProudDailyWidget.swift; sourceTree = "<group>"; };
-		20229DDAB225BA356B2EED77 /* UserProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgress.swift; sourceTree = "<group>"; };
 		2944C3D2E660DA6591AB831F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationService.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F60001DEADBEEF /* MoodSuggestionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSuggestionEngine.swift; sourceTree = "<group>"; };
@@ -53,7 +58,7 @@
 		58B6B2402859B4113DF55798 /* ProudDailyWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ProudDailyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		59531BC50CAD896785BA8891 /* Color+Pride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Pride.swift"; sourceTree = "<group>"; };
 		825A1EF99496FD12736A8B1B /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
-		93EE9E1BE12ECEB53BF62EE5 /* sample-affirmations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sample-affirmations.json"; sourceTree = "<group>"; };
+		93EE9E1BE12ECEB53BF62EE5 /* affirmations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "affirmations.json"; sourceTree = "<group>"; };
 		93FA849478CFAB4947F120C4 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		9A419AAF4940B7B4D2A7D622 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2AD190E6866B4B78B93BFC48 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
@@ -63,6 +68,13 @@
 		BEB3911BFEE934B03E39129E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F9310A958221235EE537D891 /* ProgressTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTabView.swift; sourceTree = "<group>"; };
 		FCBADB4E3C194BFF3CD95C2B /* PrideGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrideGradientView.swift; sourceTree = "<group>"; };
+		C10UD5YNCAA00000001 /* CloudSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSyncManager.swift; sourceTree = "<group>"; };
+		DA7AMANAGAA00000001 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		DA1LYREC0AA00000001 /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
+		FAV0AFFMAA00000001 /* FavoriteAffirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAffirmation.swift; sourceTree = "<group>"; };
+		U5RAFFRMAA00000001 /* UserAffirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAffirmation.swift; sourceTree = "<group>"; };
+		U5RC0LLCAA00000001 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
+		U5RPREFAAA00000001 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -77,7 +89,7 @@
 		3A89B43D2E3D85E3D14F90AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				93EE9E1BE12ECEB53BF62EE5 /* sample-affirmations.json */,
+				93EE9E1BE12ECEB53BF62EE5 /* affirmations.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -154,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				32B3EC01DA4C04F8B3BC1D2F /* AffirmationService.swift */,
+				C10UD5YNCAA00000001 /* CloudSyncManager.swift */,
+				DA7AMANAGAA00000001 /* DataManager.swift */,
 				A1B2C3D4E5F60001DEADBEEF /* MoodSuggestionEngine.swift */,
 			);
 			path = Services;
@@ -210,7 +224,11 @@
 			children = (
 				825A1EF99496FD12736A8B1B /* Affirmation.swift */,
 				1C535796EFBFC31701BD7FA5 /* JournalEntry.swift */,
-				20229DDAB225BA356B2EED77 /* UserProgress.swift */,
+				DA1LYREC0AA00000001 /* DailyRecord.swift */,
+				FAV0AFFMAA00000001 /* FavoriteAffirmation.swift */,
+				U5RAFFRMAA00000001 /* UserAffirmation.swift */,
+				U5RC0LLCAA00000001 /* UserCollection.swift */,
+				U5RPREFAAA00000001 /* UserPreferences.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,7 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7B5F08E88BB99552124186E /* Assets.xcassets in Resources */,
-				B5E73FED001E8163376118EA /* sample-affirmations.json in Resources */,
+				B5E73FED001E8163376118EA /* affirmations.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +334,13 @@
 				51651FDA95730C69697E81B8 /* ProgressTabView.swift in Sources */,
 				B49A56B8C5B9D1B47CAE571E /* ProudDailyApp.swift in Sources */,
 				50639250ADDC53F2BBE05807 /* SettingsView.swift in Sources */,
-				E8819AD52155404A17D6E028 /* UserProgress.swift in Sources */,
+				C10UD5YNCBB00000001 /* CloudSyncManager.swift in Sources */,
+				DA7AMANAGBB00000001 /* DataManager.swift in Sources */,
+				DA1LYREC0BB00000001 /* DailyRecord.swift in Sources */,
+				FAV0AFFMBB00000001 /* FavoriteAffirmation.swift in Sources */,
+				U5RAFFRMBB00000001 /* UserAffirmation.swift in Sources */,
+				U5RC0LLCBB00000001 /* UserCollection.swift in Sources */,
+				U5RPREFABB00000001 /* UserPreferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
