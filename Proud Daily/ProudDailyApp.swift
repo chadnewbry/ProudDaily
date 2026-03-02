@@ -1,4 +1,6 @@
 import SwiftUI
+import SwiftData
+import WidgetKit
 
 @main
 struct ProudDailyApp: App {
@@ -9,6 +11,27 @@ struct ProudDailyApp: App {
             ContentView()
                 .environment(themeManager)
                 .tint(themeManager.activeAccentColor)
+                .task {
+                    syncWidgetData()
+                }
+                .onChange(of: themeManager.selectedTheme) { _, _ in
+                    WidgetSyncService.shared.syncTheme()
+                    WidgetCenter.shared.reloadAllTimelines()
+                }
+        }
+    }
+
+    private func syncWidgetData() {
+        Task.detached {
+            do {
+                let container = try ModelContainer(for: Affirmation.self, DailyRecord.self, UserPreferences.self)
+                let context = ModelContext(container)
+                await MainActor.run {
+                    WidgetSyncService.shared.syncAll(modelContext: context)
+                }
+            } catch {
+                // Widget sync is best-effort
+            }
         }
     }
 }
