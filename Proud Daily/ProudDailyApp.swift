@@ -19,6 +19,15 @@ struct ProudDailyApp: App {
                     WidgetCenter.shared.reloadAllTimelines()
                 }
         }
+        .modelContainer(for: [
+            Affirmation.self,
+            DailyRecord.self,
+            UserPreferences.self,
+            FavoriteAffirmation.self,
+            JournalEntry.self,
+            UserAffirmation.self,
+            UserCollection.self
+        ])
     }
 
     private func syncWidgetData() {

@@ -121,3 +121,37 @@ enum PrideTheme: String, CaseIterable, Codable, Identifiable {
         )
     }
 }
+
+// MARK: - Hex Colors (for widget sync)
+
+extension PrideTheme {
+    var gradientHexColors: [String] {
+        switch self {
+        case .rainbow: return ["#E40303", "#FF8C00", "#FFED00", "#008026", "#004DFF", "#750787"]
+        case .trans: return ["#5BCEFA", "#F5A9B8", "#FFFFFF", "#F5A9B8", "#5BCEFA"]
+        case .bisexual: return ["#D60270", "#9B4F96", "#0038A8"]
+        case .pansexual: return ["#FF218C", "#FFD800", "#21B1FF"]
+        case .nonBinary: return ["#FCF434", "#FFFFFF", "#9C59D1", "#2C2C2C"]
+        case .lesbian: return ["#D52D00", "#FF9A56", "#FFFFFF", "#D462A6", "#A30262"]
+        case .asexual: return ["#000000", "#A3A3A3", "#FFFFFF", "#800080"]
+        case .sunset: return ["#FF6B35", "#F7931E", "#FFD700", "#FF4500"]
+        case .pastelRainbow: return ["#FFB3BA", "#FFDFBA", "#FFFFBA", "#BAFFC9", "#BAE1FF", "#D4BAFF"]
+        case .ocean: return ["#1AB3A5", "#268CCC", "#4073B3", "#59BFA5"]
+        }
+    }
+
+    var accentHex: String {
+        switch self {
+        case .rainbow: return "#750787"
+        case .trans: return "#5BCEFA"
+        case .bisexual: return "#9B4F96"
+        case .pansexual: return "#FF218C"
+        case .nonBinary: return "#9C59D1"
+        case .lesbian: return "#D462A6"
+        case .asexual: return "#800080"
+        case .sunset: return "#FF6B35"
+        case .pastelRainbow: return "#D4BAFF"
+        case .ocean: return "#1AB3A5"
+        }
+    }
+}
