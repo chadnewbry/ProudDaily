@@ -1,59 +1,6 @@
 import Foundation
 import SwiftData
 
-// MARK: - PrideTheme
-
-enum PrideTheme: String, CaseIterable, Codable, Identifiable {
-    case rainbow, trans, bi, pan, nonbinary, lesbian, asexual, sunset, nature, pastelRainbow
-
-    var id: String { rawValue }
-
-    var displayName: String {
-        switch self {
-        case .rainbow: return "Rainbow"
-        case .trans: return "Trans"
-        case .bi: return "Bisexual"
-        case .pan: return "Pansexual"
-        case .nonbinary: return "Non-Binary"
-        case .lesbian: return "Lesbian"
-        case .asexual: return "Asexual"
-        case .sunset: return "Sunset"
-        case .nature: return "Nature"
-        case .pastelRainbow: return "Pastel Rainbow"
-        }
-    }
-
-    var gradientHexColors: [String] {
-        switch self {
-        case .rainbow: return ["#E40303", "#FF8C00", "#FFED00", "#008026", "#004DFF", "#750787"]
-        case .trans: return ["#5BCEFA", "#F5A9B8", "#FFFFFF", "#F5A9B8", "#5BCEFA"]
-        case .bi: return ["#D60270", "#9B4F96", "#0038A8"]
-        case .pan: return ["#FF218C", "#FFD800", "#21B1FF"]
-        case .nonbinary: return ["#FCF434", "#FFFFFF", "#9C59D1", "#2C2C2C"]
-        case .lesbian: return ["#D52D00", "#FF9A56", "#FFFFFF", "#D462A6", "#A30262"]
-        case .asexual: return ["#000000", "#A3A3A3", "#FFFFFF", "#800080"]
-        case .sunset: return ["#FF6B35", "#F7931E", "#FFD700", "#FF4500"]
-        case .nature: return ["#2D5016", "#4A7C2E", "#7CB342", "#AED581"]
-        case .pastelRainbow: return ["#FFB3BA", "#FFDFBA", "#FFFFBA", "#BAFFC9", "#BAE1FF", "#D4BAFF"]
-        }
-    }
-
-    var accentHex: String {
-        switch self {
-        case .rainbow: return "#750787"
-        case .trans: return "#5BCEFA"
-        case .bi: return "#9B4F96"
-        case .pan: return "#FF218C"
-        case .nonbinary: return "#9C59D1"
-        case .lesbian: return "#D462A6"
-        case .asexual: return "#800080"
-        case .sunset: return "#FF6B35"
-        case .nature: return "#4A7C2E"
-        case .pastelRainbow: return "#D4BAFF"
-        }
-    }
-}
-
 // MARK: - FontSize
 
 enum FontSize: String, CaseIterable, Codable {
@@ -64,6 +11,50 @@ enum FontSize: String, CaseIterable, Codable {
         case .small: return 0.85
         case .medium: return 1.0
         case .large: return 1.2
+        }
+    }
+}
+
+// MARK: - IdentityLabel
+
+enum IdentityLabel: String, CaseIterable, Codable, Identifiable {
+    case gay, lesbian, bisexual, trans, nonBinary, queer, pansexual, asexual, questioning, ally, other
+
+    var id: String { rawValue }
+
+    var displayName: String {
+        switch self {
+        case .gay: return "Gay"
+        case .lesbian: return "Lesbian"
+        case .bisexual: return "Bisexual"
+        case .trans: return "Trans"
+        case .nonBinary: return "Non-Binary"
+        case .queer: return "Queer"
+        case .pansexual: return "Pansexual"
+        case .asexual: return "Asexual"
+        case .questioning: return "Questioning"
+        case .ally: return "Ally"
+        case .other: return "Other"
+        }
+    }
+}
+
+// MARK: - PronounOption
+
+enum PronounOption: String, CaseIterable, Identifiable {
+    case heHim = "he/him"
+    case sheHer = "she/her"
+    case theyThem = "they/them"
+    case custom
+
+    var id: String { rawValue }
+
+    var displayName: String {
+        switch self {
+        case .heHim: return "he/him"
+        case .sheHer: return "she/her"
+        case .theyThem: return "they/them"
+        case .custom: return "Custom"
         }
     }
 }
@@ -82,6 +73,8 @@ final class UserPreferences {
     var discreetModeEnabled: Bool
     var iCloudSyncEnabled: Bool
     var hasCompletedOnboarding: Bool
+    var onboardingStep: Int
+    var identityLabelsRaw: [String]
     var freeUsesRemaining: Int
     var hasPurchasedPremium: Bool
 
@@ -100,6 +93,11 @@ final class UserPreferences {
         set { fontSizeRaw = newValue.rawValue }
     }
 
+    var identityLabels: [IdentityLabel] {
+        get { identityLabelsRaw.compactMap { IdentityLabel(rawValue: $0) } }
+        set { identityLabelsRaw = newValue.map(\.rawValue) }
+    }
+
     init(
         id: UUID = UUID(),
         selectedCategories: [AffirmationCategory] = AffirmationCategory.allCases,
@@ -111,6 +109,8 @@ final class UserPreferences {
         discreetModeEnabled: Bool = false,
         iCloudSyncEnabled: Bool = false,
         hasCompletedOnboarding: Bool = false,
+        onboardingStep: Int = 0,
+        identityLabels: [IdentityLabel] = [],
         freeUsesRemaining: Int = 5,
         hasPurchasedPremium: Bool = false
     ) {
@@ -124,6 +124,8 @@ final class UserPreferences {
         self.discreetModeEnabled = discreetModeEnabled
         self.iCloudSyncEnabled = iCloudSyncEnabled
         self.hasCompletedOnboarding = hasCompletedOnboarding
+        self.onboardingStep = onboardingStep
+        self.identityLabelsRaw = identityLabels.map(\.rawValue)
         self.freeUsesRemaining = freeUsesRemaining
         self.hasPurchasedPremium = hasPurchasedPremium
     }

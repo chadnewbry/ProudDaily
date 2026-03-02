@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum AppIconVariant: String, CaseIterable, Identifiable {
+enum AppIconVariant: String, CaseIterable, Identifiable, Hashable {
     case rainbow = "AppIcon"
     case trans = "TransPride"
     case bi = "BiPride"
@@ -32,7 +32,6 @@ enum AppIconVariant: String, CaseIterable, Identifiable {
         }
     }
 
-    /// The value to pass to `setAlternateIconName`. `nil` means primary icon.
     var iconName: String? {
         self == .rainbow ? nil : rawValue
     }
@@ -41,48 +40,57 @@ enum AppIconVariant: String, CaseIterable, Identifiable {
 struct AppIconPickerView: View {
     @State private var selectedIcon: AppIconVariant = .rainbow
 
+    private let variants = AppIconVariant.allCases
+
     var body: some View {
         List {
-            ForEach(AppIconVariant.allCases) { variant in
-                Button {
-                    setIcon(variant)
-                } label: {
-                    HStack(spacing: 16) {
-                        Image(variant.rawValue + "Preview")
-                            .resizable()
-                            .frame(width: 60, height: 60)
-                            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 13, style: .continuous)
-                                    .stroke(.secondary.opacity(0.3), lineWidth: 1)
-                            )
-
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(variant.displayName)
-                                .font(.body)
-                                .foregroundStyle(.primary)
-                            Text(variant.description)
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
-
-                        Spacer()
-
-                        if selectedIcon == variant {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundStyle(.accent)
-                                .font(.title3)
-                        }
-                    }
-                    .contentShape(Rectangle())
+            Section {
+                ForEach(variants) { variant in
+                    iconRow(for: variant)
                 }
-                .buttonStyle(.plain)
             }
         }
         .navigationTitle("App Icon")
         .onAppear {
             loadCurrentIcon()
         }
+    }
+
+    @ViewBuilder
+    private func iconRow(for variant: AppIconVariant) -> some View {
+        Button {
+            setIcon(variant)
+        } label: {
+            HStack(spacing: 16) {
+                Image(variant.rawValue + "Preview")
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 13, style: .continuous)
+                            .stroke(.secondary.opacity(0.3), lineWidth: 1)
+                    )
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(variant.displayName)
+                        .font(.body)
+                        .foregroundStyle(.primary)
+                    Text(variant.description)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                if selectedIcon == variant {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundStyle(Color.accentColor)
+                        .font(.title3)
+                }
+            }
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
     }
 
     private func loadCurrentIcon() {
