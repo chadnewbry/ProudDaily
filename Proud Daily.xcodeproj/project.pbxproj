@@ -75,6 +75,8 @@
 		F4FA826AD035C12B13ED3D9E /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192CFA7F5203E6C765DB6CE0 /* HealthKitManager.swift */; };
 		F7B5F08E88BB99552124186E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543A87BEEF7D369506F9CC4E /* Assets.xcassets */; };
 		F9B0F029F2E957344CEB9F70 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3F273F70568418D5F117A /* RecordingView.swift */; };
+		F2E1D0C9B8A7F6E5D4C3B2A1 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A7B8C9D0E1F2 /* StoreManager.swift */; };
+		A3F2E1D0C9B8A7F6E5D4C3B2 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* PaywallView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +162,9 @@
 		F867059D5FA6CEF16C21C029 /* AudioFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileManager.swift; sourceTree = "<group>"; };
 		F9310A958221235EE537D891 /* ProgressTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTabView.swift; sourceTree = "<group>"; };
 		FCBADB4E3C194BFF3CD95C2B /* PrideGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrideGradientView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		B2C3D4E5F6A7B8C9D0E1F2A3 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		D4E5F6A7B8C9D0E1F2A3B4C5 /* ProudDaily.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = ProudDaily.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -229,6 +234,7 @@
 				543A87BEEF7D369506F9CC4E /* Assets.xcassets */,
 				2944C3D2E660DA6591AB831F /* ContentView.swift */,
 				6BC3B2E7B444BF1A690E8641 /* Info.plist */,
+				D4E5F6A7B8C9D0E1F2A3B4C5 /* ProudDaily.storekit */,
 				BC561913C3DDBC9FC27B9233 /* Proud Daily.entitlements */,
 				066B258FB2C75C6529F12631 /* ProudDailyApp.swift */,
 				91C5A4D90692232E73869394 /* Extensions */,
@@ -326,6 +332,7 @@
 				0D954961CFA995229FD4038E /* NotificationManager.swift */,
 				23575A04A55E99EAFE909DAA /* Audio */,
 				09DB6A04382AA615380CAA9B /* WidgetSyncService.swift */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* StoreManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -343,6 +350,7 @@
 			children = (
 				950BC897BB2E5F3FF2D3DB7C /* Audio */,
 				65CA25344159FC6AB32C04B7 /* Home */,
+				C3D4E5F6A7B8C9D0E1F2A3B4 /* Paywall */,
 				2B3DFE3822C697314600EBD7 /* Journal */,
 				F8F680BAA6A3CB30B0541BA1 /* Library */,
 				BD65A439E11840CD1093D5E9 /* Progress */,
@@ -392,6 +400,14 @@
 				B966E702B7008B2DCD652DE2 /* VoiceRecording.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C3D4E5F6A7B8C9D0E1F2A3B4 /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				B2C3D4E5F6A7B8C9D0E1F2A3 /* PaywallView.swift */,
+			);
+			path = Paywall;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,6 +557,8 @@
 				20A89EC1E6DD00C43C2FB981 /* SyncStepView.swift in Sources */,
 				130BE1C9122339041B7B43A8 /* ReadyStepView.swift in Sources */,
 				5E5B85B34452A696DA9D504A /* WidgetSyncService.swift in Sources */,
+				F2E1D0C9B8A7F6E5D4C3B2A1 /* StoreManager.swift in Sources */,
+				A3F2E1D0C9B8A7F6E5D4C3B2 /* PaywallView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,7 +588,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Proud Daily/Proud Daily.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Proud Daily/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Proud Daily";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Proud Daily uses HealthKit to track your mindfulness minutes.";
@@ -637,7 +657,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Proud Daily/Proud Daily.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Proud Daily/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Proud Daily";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Proud Daily uses HealthKit to track your mindfulness minutes.";
