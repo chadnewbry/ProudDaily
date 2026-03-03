@@ -59,6 +59,32 @@ enum PronounOption: String, CaseIterable, Identifiable {
     }
 }
 
+// MARK: - AppearanceMode
+
+enum AppearanceMode: String, CaseIterable, Codable, Identifiable {
+    case system
+    case light
+    case dark
+
+    var id: String { rawValue }
+
+    var displayName: String {
+        switch self {
+        case .system: return "System"
+        case .light: return "Light"
+        case .dark: return "Dark"
+        }
+    }
+
+    var icon: String {
+        switch self {
+        case .system: return "gear"
+        case .light: return "sun.max.fill"
+        case .dark: return "moon.fill"
+        }
+    }
+}
+
 // MARK: - UserPreferences (SwiftData Model — single instance)
 
 @Model
@@ -77,6 +103,11 @@ final class UserPreferences {
     var identityLabelsRaw: [String]
     var freeUsesRemaining: Int
     var hasPurchasedPremium: Bool
+    var defaultAmbientSoundRaw: String
+    var sleepTimerDurationMinutes: Int
+    var healthKitEnabled: Bool
+    var appearanceModeRaw: String
+    var notificationCategoryFiltersRaw: [String]
 
     var selectedCategories: [AffirmationCategory] {
         get { selectedCategoriesRaw.compactMap { AffirmationCategory(rawValue: $0) } }
@@ -98,6 +129,26 @@ final class UserPreferences {
         set { identityLabelsRaw = newValue.map(\.rawValue) }
     }
 
+    var defaultAmbientSound: AmbientSound {
+        get { AmbientSound(rawValue: defaultAmbientSoundRaw) ?? .rain }
+        set { defaultAmbientSoundRaw = newValue.rawValue }
+    }
+
+    var sleepTimerDuration: SleepTimerDuration {
+        get { SleepTimerDuration(rawValue: sleepTimerDurationMinutes) ?? .thirty }
+        set { sleepTimerDurationMinutes = newValue.rawValue }
+    }
+
+    var appearanceMode: AppearanceMode {
+        get { AppearanceMode(rawValue: appearanceModeRaw) ?? .system }
+        set { appearanceModeRaw = newValue.rawValue }
+    }
+
+    var notificationCategoryFilters: [AffirmationCategory] {
+        get { notificationCategoryFiltersRaw.compactMap { AffirmationCategory(rawValue: $0) } }
+        set { notificationCategoryFiltersRaw = newValue.map(\.rawValue) }
+    }
+
     init(
         id: UUID = UUID(),
         selectedCategories: [AffirmationCategory] = AffirmationCategory.allCases,
@@ -112,7 +163,12 @@ final class UserPreferences {
         onboardingStep: Int = 0,
         identityLabels: [IdentityLabel] = [],
         freeUsesRemaining: Int = 5,
-        hasPurchasedPremium: Bool = false
+        hasPurchasedPremium: Bool = false,
+        defaultAmbientSound: AmbientSound = .rain,
+        sleepTimerDuration: SleepTimerDuration = .thirty,
+        healthKitEnabled: Bool = false,
+        appearanceMode: AppearanceMode = .system,
+        notificationCategoryFilters: [AffirmationCategory] = AffirmationCategory.allCases
     ) {
         self.id = id
         self.selectedCategoriesRaw = selectedCategories.map(\.rawValue)
@@ -128,5 +184,10 @@ final class UserPreferences {
         self.identityLabelsRaw = identityLabels.map(\.rawValue)
         self.freeUsesRemaining = freeUsesRemaining
         self.hasPurchasedPremium = hasPurchasedPremium
+        self.defaultAmbientSoundRaw = defaultAmbientSound.rawValue
+        self.sleepTimerDurationMinutes = sleepTimerDuration.rawValue
+        self.healthKitEnabled = healthKitEnabled
+        self.appearanceModeRaw = appearanceMode.rawValue
+        self.notificationCategoryFiltersRaw = notificationCategoryFilters.map(\.rawValue)
     }
 }
