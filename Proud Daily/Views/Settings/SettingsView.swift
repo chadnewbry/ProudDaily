@@ -15,6 +15,8 @@ struct SettingsView: View {
     @State private var showMailComposer = false
     @State private var showShareSheet = false
     @State private var showRestorePurchasesAlert = false
+    @State private var storeManager = StoreManager.shared
+    @State private var showPaywall = false
     @State private var audioStorageSize: String = "Calculating…"
 
     private var preferences: UserPreferences {
@@ -61,7 +63,7 @@ struct SettingsView: View {
             .alert("Restore Purchases", isPresented: $showRestorePurchasesAlert) {
                 Button("OK") { }
             } message: {
-                Text("Purchase restoration complete. If you had a previous purchase, premium features have been unlocked.")
+                Text(storeManager.isPurchased ? "Premium features have been unlocked!" : "No previous purchase found.")
             }
             .task {
                 calculateAudioStorage()
@@ -365,12 +367,26 @@ struct SettingsView: View {
     private var restorePurchasesSection: some View {
         Section {
             Button {
+                showPaywall = true
+            } label: {
+                Label("Upgrade to Premium", systemImage: "sparkles")
+            }
+
+            Button {
                 Task {
-                    try? await AppStore.sync()
+                    let success = await storeManager.restore()
+                    if success {
+                        preferences.hasPurchasedPremium = true
+                    }
                     showRestorePurchasesAlert = true
                 }
             } label: {
                 Label("Restore Purchases", systemImage: "arrow.clockwise")
+            }
+        }
+        .fullScreenCover(isPresented: $showPaywall) {
+            PaywallView {
+                preferences.hasPurchasedPremium = true
             }
         }
     }
