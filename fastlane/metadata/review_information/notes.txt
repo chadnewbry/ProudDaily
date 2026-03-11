@@ -1,0 +1,7 @@
+Proud Daily works without any account or login. Simply open the app and you'll see your daily affirmation immediately.
+
+5 free affirmations are available without any purchase. After that, users can unlock the full library with a one-time $4.99 in-app purchase (non-consumable).
+
+There is no server-side component — all affirmation content is bundled within the app. iCloud sync is optional and uses the user's private CloudKit container.
+
+No special configuration or demo account is needed to review the app.
