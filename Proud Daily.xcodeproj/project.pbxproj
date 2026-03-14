@@ -77,6 +77,8 @@
 		F9B0F029F2E957344CEB9F70 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3F273F70568418D5F117A /* RecordingView.swift */; };
 		F2E1D0C9B8A7F6E5D4C3B2A1 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A7B8C9D0E1F2 /* StoreManager.swift */; };
 		A3F2E1D0C9B8A7F6E5D4C3B2 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* PaywallView.swift */; };
+		E86015150E044BD8826C2377 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDC56C870BE49B48B2ED037 /* AppConfig.swift */; };
+		2581854A3F2943978400CE18 /* app-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 88A55829573C40668F561052 /* app-config.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +167,8 @@
 		A1B2C3D4E5F6A7B8C9D0E1F2 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		B2C3D4E5F6A7B8C9D0E1F2A3 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		D4E5F6A7B8C9D0E1F2A3B4C5 /* ProudDaily.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = ProudDaily.storekit; sourceTree = "<group>"; };
+		2CDC56C870BE49B48B2ED037 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		88A55829573C40668F561052 /* app-config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "app-config.json"; path = ".asc/app-config.json"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -480,6 +484,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2581854A3F2943978400CE18 /* app-config.json in Resources */,
 				F7B5F08E88BB99552124186E /* Assets.xcassets in Resources */,
 				32F164C31420A923DBEE020B /* affirmations.json in Resources */,
 				11018746A4376B8ACBA4B7CC /* lofi_beats.m4a in Resources */,
@@ -497,6 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E86015150E044BD8826C2377 /* AppConfig.swift in Sources */,
 				36D9FE50891B825155E2CD5B /* Affirmation.swift in Sources */,
 				CFDA5F1CA79A000476FB51E7 /* AffirmationService.swift in Sources */,
 				C0ED0DCADBD80A9E3152CEC0 /* AmbientSound.swift in Sources */,
