@@ -303,11 +303,11 @@ struct SettingsView: View {
 
     private var supportLegalSection: some View {
         Section {
-            Link(destination: URL(string: "https://prouddaily.app/privacy")!) {
+            Link(destination: URL(string: AppConfig.shared.urls.privacyPolicy)!) {
                 Label("Privacy Policy", systemImage: "hand.raised")
             }
 
-            Link(destination: URL(string: "https://prouddaily.app/terms")!) {
+            Link(destination: URL(string: AppConfig.shared.urls.termsOfService)!) {
                 Label("Terms of Use", systemImage: "doc.text")
             }
 
