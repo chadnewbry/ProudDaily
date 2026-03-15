@@ -1,6 +1,5 @@
 import SwiftUI
 import SwiftData
-import MessageUI
 import StoreKit
 
 struct SettingsView: View {
@@ -12,7 +11,6 @@ struct SettingsView: View {
     @State private var showDeleteConfirmation = false
     @State private var showExportSheet = false
     @State private var exportURL: URL?
-    @State private var showMailComposer = false
     @State private var showShareSheet = false
     @State private var showRestorePurchasesAlert = false
     @State private var storeManager = StoreManager.shared
@@ -56,9 +54,6 @@ struct SettingsView: View {
             }
             .sheet(isPresented: $showShareSheet) {
                 ShareSheetView(items: [URL(string: "https://apps.apple.com/app/proud-daily/id0000000000")!])
-            }
-            .sheet(isPresented: $showMailComposer) {
-                MailComposerView()
             }
             .alert("Restore Purchases", isPresented: $showRestorePurchasesAlert) {
                 Button("OK") { }
@@ -312,7 +307,7 @@ struct SettingsView: View {
             }
 
             Button {
-                showMailComposer = true
+                openSupportEmail()
             } label: {
                 Label("Contact Support", systemImage: "envelope")
             }
@@ -473,6 +468,16 @@ struct SettingsView: View {
         audioStorageSize = "0 bytes"
     }
 
+
+    private func openSupportEmail() {
+        let email = AppConfig.shared.review?.contactEmail ?? "chad.newbry@gmail.com"
+        let subject = "Proud Daily Support"
+        let encodedSubject = subject.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? subject
+        if let url = URL(string: "mailto:\(email)?subject=\(encodedSubject)") {
+            UIApplication.shared.open(url)
+        }
+    }
+
     private func sendFeedbackEmail() {
         let email = AppConfig.shared.review?.contactEmail ?? "chad.newbry@gmail.com"
         let subject = "Feedback: Proud Daily"
@@ -499,45 +504,6 @@ struct ShareSheetView: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
-}
-
-// MARK: - Mail Composer
-
-struct MailComposerView: UIViewControllerRepresentable {
-    @Environment(\.dismiss) private var dismiss
-
-    func makeUIViewController(context: Context) -> MFMailComposeViewController {
-        let composer = MFMailComposeViewController()
-        composer.mailComposeDelegate = context.coordinator
-        composer.setToRecipients(["chad.newbry@gmail.com"])
-        composer.setSubject("Proud Daily Support")
-
-        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?"
-        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "?"
-        let device = UIDevice.current
-        let body = """
-
-
-        ---
-        App Version: \(version) (\(build))
-        Device: \(device.model)
-        iOS: \(device.systemVersion)
-        """
-        composer.setMessageBody(body, isHTML: false)
-        return composer
-    }
-
-    func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) {}
-
-    func makeCoordinator() -> Coordinator { Coordinator(dismiss: dismiss) }
-
-    class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
-        let dismiss: DismissAction
-        init(dismiss: DismissAction) { self.dismiss = dismiss }
-        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-            dismiss()
-        }
-    }
 }
 
 // MARK: - Category Selection
