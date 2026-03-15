@@ -22,17 +22,31 @@ struct OnboardingView: View {
             PrideGradientView()
 
             VStack(spacing: 0) {
-                // Progress dots
+                // Top bar with progress dots and skip button
                 if currentStep > 0 && currentStep < totalSteps - 1 {
-                    OnboardingProgressDots(current: currentStep, total: totalSteps)
-                        .padding(.top, 16)
+                    HStack {
+                        Spacer()
+                        OnboardingProgressDots(current: currentStep, total: totalSteps)
+                        Spacer()
+                    }
+                    .overlay(alignment: .trailing) {
+                        Button(action: completeOnboarding) {
+                            Text("Skip")
+                                .font(.subheadline)
+                                .fontWeight(.medium)
+                                .foregroundStyle(.white.opacity(0.8))
+                        }
+                        .padding(.trailing, 20)
+                        .accessibilityIdentifier("onboarding-skip-all")
+                    }
+                    .padding(.top, 16)
                 }
 
                 TabView(selection: $currentStep) {
                     WelcomeStepView(onNext: advance)
                         .tag(0)
 
-                    IdentityStepView(preferences: preferences, onNext: advance, onSkip: advance)
+                    IdentityStepView(preferences: preferences, onNext: advance, onSkip: completeOnboarding)
                         .tag(1)
 
                     CategoryStepView(preferences: preferences, onNext: advance)
@@ -41,10 +55,10 @@ struct OnboardingView: View {
                     ThemeStepView(preferences: preferences, themeManager: themeManager, onNext: advance)
                         .tag(3)
 
-                    NotificationStepView(preferences: preferences, onNext: advance, onSkip: advance)
+                    NotificationStepView(preferences: preferences, onNext: advance, onSkip: completeOnboarding)
                         .tag(4)
 
-                    SyncStepView(preferences: preferences, onNext: advance, onSkip: advance)
+                    SyncStepView(preferences: preferences, onNext: advance, onSkip: completeOnboarding)
                         .tag(5)
 
                     ReadyStepView(onComplete: completeOnboarding)
