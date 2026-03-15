@@ -5,6 +5,7 @@ import WidgetKit
 @main
 struct ProudDailyApp: App {
     @State private var themeManager = ThemeManager()
+    @State private var storeManager = StoreManager.shared
 
     var body: some Scene {
         WindowGroup {
@@ -12,6 +13,7 @@ struct ProudDailyApp: App {
                 .environment(themeManager)
                 .tint(themeManager.activeAccentColor)
                 .task {
+                    storeManager.start()
                     syncWidgetData()
                 }
                 .onChange(of: themeManager.selectedTheme) { _, _ in

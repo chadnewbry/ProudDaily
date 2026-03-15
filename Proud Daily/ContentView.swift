@@ -51,8 +51,23 @@ struct ContentView: View {
                 .tint(themeManager.activeAccentColor)
             }
         }
+        .preferredColorScheme(preferredColorScheme)
         .onAppear {
+            #if DEBUG
+            if ScreenshotSampleData.isScreenshotMode {
+                ScreenshotSampleData.populate(context: modelContext)
+            }
+            #endif
             loadPreferences()
+        }
+    }
+
+    private var preferredColorScheme: ColorScheme? {
+        guard let prefs = preferences else { return nil }
+        switch prefs.appearanceMode {
+        case .system: return nil
+        case .light: return .light
+        case .dark: return .dark
         }
     }
 

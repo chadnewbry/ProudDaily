@@ -1,0 +1,18 @@
+{
+  "bundleId": "com.openclaw.prouddaily",
+  "appName": "Proud Daily",
+  "copyright": "© 2026 Chad Newbry",
+  "urls": {
+    "website": "https://prouddaily.app",
+    "privacyPolicy": "https://prouddaily.app/privacy",
+    "termsOfService": "https://prouddaily.app/terms",
+    "support": "https://prouddaily.app/support"
+  },
+  "review": {
+    "demoAccountRequired": false,
+    "contactFirstName": "Chad",
+    "contactLastName": "Newbry",
+    "contactEmail": "chad.newbry@gmail.com",
+    "contactPhone": "+15417605021"
+  }
+}

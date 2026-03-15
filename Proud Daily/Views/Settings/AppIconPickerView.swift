@@ -7,6 +7,8 @@ enum AppIconVariant: String, CaseIterable, Identifiable, Hashable {
     case subtle = "Subtle"
     case pastel = "PastelRainbow"
     case bold = "BoldPride"
+    case discreetBlue = "DiscreetBlue"
+    case discreetGray = "DiscreetGray"
 
     var id: String { rawValue }
 
@@ -18,6 +20,8 @@ enum AppIconVariant: String, CaseIterable, Identifiable, Hashable {
         case .subtle: return "Subtle"
         case .pastel: return "Pastel Rainbow"
         case .bold: return "Bold Pride"
+        case .discreetBlue: return "Discreet Blue"
+        case .discreetGray: return "Discreet Gray"
         }
     }
 
@@ -29,23 +33,41 @@ enum AppIconVariant: String, CaseIterable, Identifiable, Hashable {
         case .subtle: return "Discreet with hidden pride accent"
         case .pastel: return "Soft pastel rainbow"
         case .bold: return "Vibrant diagonal pride"
+        case .discreetBlue: return "Minimal blue — no pride symbols"
+        case .discreetGray: return "Neutral gray — fully discreet"
         }
+    }
+
+    var isDiscreet: Bool {
+        self == .subtle || self == .discreetBlue || self == .discreetGray
     }
 
     var iconName: String? {
         self == .rainbow ? nil : rawValue
+    }
+
+    static var prideVariants: [AppIconVariant] {
+        allCases.filter { !$0.isDiscreet }
+    }
+
+    static var discreetVariants: [AppIconVariant] {
+        allCases.filter { $0.isDiscreet }
     }
 }
 
 struct AppIconPickerView: View {
     @State private var selectedIcon: AppIconVariant = .rainbow
 
-    private let variants = AppIconVariant.allCases
-
     var body: some View {
         List {
-            Section {
-                ForEach(variants) { variant in
+            Section("Pride Icons") {
+                ForEach(AppIconVariant.prideVariants) { variant in
+                    iconRow(for: variant)
+                }
+            }
+
+            Section("Discreet Icons") {
+                ForEach(AppIconVariant.discreetVariants) { variant in
                     iconRow(for: variant)
                 }
             }

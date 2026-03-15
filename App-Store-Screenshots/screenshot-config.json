@@ -1,0 +1,37 @@
+{
+  "appName": "Proud Daily",
+  "bundleId": "com.openclaw.prouddaily",
+  "theme": {
+    "backgroundColor": "#1A0533",
+    "headerColor": "#FFFFFF",
+    "subtitleColor": "#D4A8FF",
+    "gradientColors": ["#6B21A8", "#DB2777", "#F59E0B"]
+  },
+  "screenshots": [
+    {
+      "filename": "01-home.png",
+      "header": "Your Daily Dose of Pride",
+      "subtitle": "Start each morning with a powerful affirmation"
+    },
+    {
+      "filename": "02-library.png",
+      "header": "Curated for You",
+      "subtitle": "Browse 9 categories celebrating every identity"
+    },
+    {
+      "filename": "03-journal.png",
+      "header": "Reflect & Grow",
+      "subtitle": "Track your mood and journal your journey"
+    },
+    {
+      "filename": "04-progress.png",
+      "header": "See Your Growth",
+      "subtitle": "Build streaks and watch your well-being improve"
+    },
+    {
+      "filename": "05-settings.png",
+      "header": "Make It Yours",
+      "subtitle": "Pride themes, custom icons, and more"
+    }
+  ]
+}
