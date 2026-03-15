@@ -1,0 +1,7 @@
+appId: com.openclaw.prouddaily
+---
+- launchApp
+- tapOn: "Settings"
+- tapOn: "Upgrade"
+- waitForAnimationToEnd
+- takeScreenshot: paywall
