@@ -318,6 +318,12 @@ struct SettingsView: View {
             }
 
             Button {
+                sendFeedbackEmail()
+            } label: {
+                Label("Feedback / Product Suggestions", systemImage: "lightbulb")
+            }
+
+            Button {
                 requestAppReview()
             } label: {
                 Label("Rate the App", systemImage: "star")
@@ -465,6 +471,15 @@ struct SettingsView: View {
             try? FileManager.default.removeItem(at: file)
         }
         audioStorageSize = "0 bytes"
+    }
+
+    private func sendFeedbackEmail() {
+        let email = AppConfig.shared.review?.contactEmail ?? "chad.newbry@gmail.com"
+        let subject = "Feedback: Proud Daily"
+        let encodedSubject = subject.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? subject
+        if let url = URL(string: "mailto:\(email)?subject=\(encodedSubject)") {
+            UIApplication.shared.open(url)
+        }
     }
 
     private func requestAppReview() {
