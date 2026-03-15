@@ -53,6 +53,11 @@ struct ContentView: View {
         }
         .preferredColorScheme(preferredColorScheme)
         .onAppear {
+            #if DEBUG
+            if ScreenshotSampleData.isScreenshotMode {
+                ScreenshotSampleData.populate(context: modelContext)
+            }
+            #endif
             loadPreferences()
         }
     }
