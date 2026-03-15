@@ -1,0 +1,61 @@
+appId: com.openclaw.prouddaily
+name: "Capture App Store Screenshots"
+---
+
+# ──────────────────────────────────────────────
+# 1. First launch — seed screenshot data
+# ──────────────────────────────────────────────
+- launchApp:
+    appId: com.openclaw.prouddaily
+    clearState: true
+    arguments:
+      --screenshot-mode: ""
+
+# Give SwiftData time to persist
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Home"
+    timeout: 8000
+
+# ──────────────────────────────────────────────
+# 2. Relaunch so @Query views pick up seeded data
+# ──────────────────────────────────────────────
+- launchApp:
+    appId: com.openclaw.prouddaily
+    clearState: false
+    arguments:
+      --screenshot-mode: ""
+
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Home"
+    timeout: 8000
+
+# ──────────────────────────────────────────────
+# 3. Capture screenshots
+# ──────────────────────────────────────────────
+
+# -- Screenshot 1: Home — Daily Affirmation --
+- tapOn: "Home"
+- waitForAnimationToEnd
+- takeScreenshot: "01-home"
+
+# -- Screenshot 2: Library — Browse Categories --
+- tapOn: "Library"
+- waitForAnimationToEnd
+- takeScreenshot: "02-library"
+
+# -- Screenshot 3: Journal — Timeline --
+- tapOn: "Journal"
+- waitForAnimationToEnd
+- takeScreenshot: "03-journal"
+
+# -- Screenshot 4: Progress — Streak & Mood --
+- tapOn: "Progress"
+- waitForAnimationToEnd
+- takeScreenshot: "04-progress"
+
+# -- Screenshot 5: Settings — Themes & Customization --
+- tapOn: "Settings"
+- waitForAnimationToEnd
+- takeScreenshot: "05-settings"
