@@ -53,6 +53,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Proud Daily needs microphone access to record you reading your affirmations.</string>
 	<key>UIBackgroundModes</key>
